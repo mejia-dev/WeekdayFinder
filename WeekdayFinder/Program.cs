@@ -5,14 +5,7 @@ class Program
 {
   static void Main()
   {
-    // C# Program code goes here.
     GetYear();
-    
-
-
-
-    // DateTime inputtedDate = new DateTime(year, month, day);
-    // inputtedDate
   }
 
   static void GetYear()
@@ -25,7 +18,9 @@ class Program
       {
         Console.WriteLine("Check format and try again.");
         GetYear();
-      } else {
+      }
+      else
+      {
         int yearInt = int.Parse(year);
         Console.WriteLine("");
         GetMonth(yearInt);
@@ -48,7 +43,7 @@ class Program
       {
         Console.WriteLine("Check format and try again.");
         GetMonth(year);
-      } 
+      }
       else if (monthInt < 1 || monthInt > 12)
       {
         Console.WriteLine("Month can't be less than 1 or greater than 12.");
@@ -80,34 +75,31 @@ class Program
         GetDay(year, month);
       }
       // if month is odd, get 31 days
-      else if ((month%2 != 0) && (dayInt < 1 || dayInt > 31))
+      else if ((month % 2 != 0) && (dayInt < 1 || dayInt > 31))
       {
         Console.WriteLine("This month doesn't have that many days. Please try again.");
         GetDay(year, month);
       }
-
       // if month is even AND NOT 2, get 30 days
-      else if ((month%2 == 0) && (month != 2) && (dayInt < 1 || dayInt > 30))
+      else if ((month % 2 == 0) && (month != 2) && (dayInt < 1 || dayInt > 30))
       {
         Console.WriteLine("This month doesn't have that many days. Please try again.");
         GetDay(year, month);
       }
-
       // if month is even AND 2, AND if year is divisible by 4, get 29 days
-      else if ((month%2 == 0) && (month == 2) && (year%4 == 0) && (dayInt < 1 || dayInt > 29))
+      else if ((month % 2 == 0) && (month == 2) && (year % 4 == 0) && (dayInt < 1 || dayInt > 29))
       {
         Console.WriteLine("This month doesn't have that many days. Please try again.");
         GetDay(year, month);
       }
-
       // if month is even AND 2, AND if year is not divisible by 4, get 28 days
-      else if ((month%2 == 0) && (month == 2) && (year%4 != 0) && (dayInt < 1 || dayInt > 28))
+      else if ((month % 2 == 0) && (month == 2) && (year % 4 != 0) && (dayInt < 1 || dayInt > 28))
       {
         Console.WriteLine("This month doesn't have that many days. Please try again.");
         GetDay(year, month);
       }
-      
-      else {
+      else
+      {
         SendToDayFinder(year, month, dayInt);
       }
     }
