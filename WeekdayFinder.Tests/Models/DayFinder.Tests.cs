@@ -14,5 +14,12 @@ namespace WeekdayFinder.Tests
       string result = DayFinder.GetDayOfWeek(dt);
       Assert.IsInstanceOfType(result, typeof(string));
     }
+    [TestMethod]
+    public void GetDayOfWeek_ReturnsMondayIfDayWasMonday_String()
+    {
+      DateTime dt = new DateTime(2024, 1, 15);
+      string result = DayFinder.GetDayOfWeek(dt);
+      Assert.AreEqual(result, "Monday");
+    }
   }
 }

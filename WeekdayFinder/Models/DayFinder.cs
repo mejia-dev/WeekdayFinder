@@ -6,8 +6,7 @@ namespace WeekdayFinder.Models
   {
     public static string GetDayOfWeek(DateTime dateTime)
     {
-      string result = "";
-      return result;
+      return dateTime.DayOfWeek.ToString();
     }
   }
 }
